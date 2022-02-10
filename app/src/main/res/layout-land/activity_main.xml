@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_back">
+
+
+    <TableRow
+        android:id="@+id/tableRow24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableRow22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_default"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_green"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_red"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+        </RadioGroup>
+    </TableRow>
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/textView_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow20"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/strip_color"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow20" />
+
+    <TableRow
+        android:id="@+id/tableRow20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow19"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnC"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/c"
+            android:textColor="#FF8A65"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/percent"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/div"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/del"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow23"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/plus"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow21"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_7"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_9"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/x"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size"
+
+            />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow22"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_6"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/minus"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlusOrMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/plus_or_minus"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnZero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/point"
+            android:textColor="@color/actions_button_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:backgroundTint="@color/actions_button_text_color"
+            android:text="@string/eq"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+
+    </TableRow>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
