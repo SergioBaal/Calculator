@@ -24,4 +24,5 @@
     <string name="theme_default">ThemeDefault</string>
     <string name="theme_red">ThemeRed</string>
     <string name="settings">Настройки</string>
+    <string name="start_app">Запустить приложение</string>
 </resources>
