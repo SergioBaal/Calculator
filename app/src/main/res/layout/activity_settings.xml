@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black_back">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioDef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme_default"
+            android:textColor="@color/white"
+            android:textSize="@dimen/theme_text_size" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme_green"
+            android:textColor="@color/white"
+            android:textSize="@dimen/theme_text_size" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme_red"
+            android:textColor="@color/white"
+            android:textSize="@dimen/theme_text_size" />
+
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

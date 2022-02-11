@@ -8,49 +8,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/black_back">
 
-
-    <TableRow
-        android:id="@+id/tableRow24"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tableRow22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            >
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioDef"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_default"
-                android:textColor="@color/white"
-                android:textSize="@dimen/button_text_size" />
-
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioGreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_green"
-                android:textColor="@color/white"
-                android:textSize="@dimen/button_text_size" />
-
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioRed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_red"
-                android:textColor="@color/white"
-                android:textSize="@dimen/button_text_size" />
-        </RadioGroup>
-    </TableRow>
+    </com.google.android.material.button.MaterialButton>
 
     <TextView
 

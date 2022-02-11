@@ -23,4 +23,5 @@
     <string name="theme_green">ThemeGreen</string>
     <string name="theme_default">ThemeDefault</string>
     <string name="theme_red">ThemeRed</string>
+    <string name="settings">Настройки</string>
 </resources>

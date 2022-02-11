@@ -1,7 +1,12 @@
 package ru.geekbrains.calculator;
+
+import static ru.geekbrains.calculator.R.style.myThemeDefault;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +15,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String PREF_NAME = "key_pref";
-    private static final String PREF_THEME_KEY = "key_pref_theme";
+    public static final String PREF_NAME = "key_pref";
+    public static final String PREF_THEME_KEY = "key_pref_theme";
     private Button btnOne;
     private Button btnTwo;
     private Button btnThree;
@@ -33,20 +38,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnPoint;
     private Button btnEqual;
     private TextView textView;
-    private RadioButton ThemeDefault;
-    private RadioButton ThemeRed;
-    private RadioButton ThemeGreen;
+    private Button settings;
+    public static int REQUEST_CODE = 777;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme());
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        setTheme(sharedPreferences.getInt(PREF_NAME, R.style.myThemeDefault));
         setContentView(R.layout.activity_main);
         init();
         setListeners();
-        ThemeDefault.setChecked(true);
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     @Override
@@ -66,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
+        settings = findViewById(R.id.settings);
         btnOne = findViewById(R.id.btnOne);
         btnTwo = findViewById(R.id.btnTwo);
         btnThree = findViewById(R.id.btnThree);
@@ -87,38 +99,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPoint = findViewById(R.id.btnPoint);
         btnEqual = findViewById(R.id.btnEqual);
         textView = findViewById(R.id.textView);
-        ThemeDefault = findViewById(R.id.radioDef);
-        ThemeRed = findViewById(R.id.radioRed);
-        ThemeGreen = findViewById(R.id.radioGreen);
 
-        
 
     }
 
 
     private void setListeners() {
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        ((RadioButton) findViewById(R.id.radioDef)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setAppTheme(R.style.myThemeDefault);
-                recreate();
-            }
-        });
-        ((RadioButton) findViewById(R.id.radioRed)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setAppTheme(R.style.myThemeRed);
-                recreate();
-            }
-        });
-        ((RadioButton) findViewById(R.id.radioGreen)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setAppTheme(R.style.myThemeGreen);
-                recreate();
-            }
-        });
         btnOne.setOnClickListener(this);
         btnTwo.setOnClickListener(this);
         btnThree.setOnClickListener(this);
@@ -146,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     double second = 0.0d;
     int operation = 0;
     String input = "";
+
 
     @Override
     public void onClick(View view) {
@@ -193,29 +188,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    void result () {
-        switch (operation){
+    void result() {
+        switch (operation) {
             case 1:
-                textView.setText(String.format("%.2f", second+first));
+                textView.setText(String.format("%.2f", second + first));
                 break;
             case 2:
                 textView.setText(String.format("%.2f", second - first));
                 break;
         }
     }
-
-    protected void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(PREF_THEME_KEY, codeStyle);
-        editor.apply();
-    }
-
-    protected int getAppTheme() {
-        SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return sharedPref.getInt(PREF_THEME_KEY,R.style.myThemeDefault);
-    }
-
 
 
 }
